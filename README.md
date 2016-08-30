@@ -1,0 +1,2 @@
+# lamuc
+a dynamic language 
