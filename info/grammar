@@ -1,0 +1,28 @@
+keywords & operators 
+> < = != == >= <= + - " mul div , //基本运算
+] [ //列表
+and or not // 逻辑运算 
+} { //代码块
+:= //深拷贝 
+if else //条件
+:F foo(a,b){  //函数
+	ret a
+} 
+ret //返回 
+true false null //内建值
+:G a=1 //全局变量
+:L (i,0,1) { //循环
+ 	a=1
+}
+
+单行注释 --
+多行注释 --{
+	}--
+
+:F prnthw(count){
+	prntln("Hello World!")
+	ret count
+}
+:L (i,0,2){
+	j = prnthw(i)
+}

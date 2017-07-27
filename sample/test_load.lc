@@ -1,0 +1,5 @@
+:F foo (a,b,c) {
+-- function
+.	ret a,b\r,c
+
+}
