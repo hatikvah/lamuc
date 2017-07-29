@@ -1,5 +1,11 @@
-:F foo (a,b,c) {
--- function
-.	ret a,b\r,c
+ 
 
-}
+
+ :F foo (a,b''',10.b' 9+-7) {
+-- function
+.	ret a',br,"jablko\\\nabc"  
+
+}  
+
+
+
