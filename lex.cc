@@ -82,11 +82,11 @@ void lcLex :: PushColonAny(std::vector<std::string> &v,int len, TextPos* p){
 		//std::cout<<"handling <:>"<<std::endl;
 		if(v[p->curx][p->cury+1] == 'F'){
 			PushWord(FUNC,":F", p->curx, p->cury);
-		}
-		else if( v[p->curx][p->cury+1] == 'L'){
+		}else if( v[p->curx][p->cury+1] == 'L'){
 			PushWord(LOOP,":L", p->curx, p->cury);
-		}
-		else{
+		}/*else if(v[p->curx][p->cury+1] == 'T'){
+			PushWord(TABEL,":T",p->curx,p->cury);
+		}*/else{
 			std::cout<<"lex error: line: "<<p->curx<<" pos: "<<p->cury<<" undefined block with ':' "<<std::endl;
 			exit(1);
 		}
@@ -171,15 +171,15 @@ void lcLex :: LexAnalyze(){
 			switch (tmpchar) {
 			case ' ' 	:	
 			case '	':  p->cury++; break;
-			case '+': PushWord(ADD,"+",p->curx,p->cury); p->cury++;break;
-			case ',':	PushWord(COMMA,",",p->curx,p->cury);p->cury++;break;
-			case '.':	PushWord(DOT,".",p->curx,p->cury);p->cury++;break;
-			case '{':	PushWord(LBRC,"{",p->curx,p->cury);p->cury++;break;
-			case '}':	PushWord(RBRC,"}",p->curx,p->cury);p->cury++;break;
-			case '[':	PushWord(LBRK,"[",p->curx,p->cury);p->cury++;break;
-			case ']':	PushWord(RBRK,"]",p->curx,p->cury);p->cury++;break;
-			case '(':	PushWord(LPR,"(",p->curx,p->cury);p->cury++;break;
-			case ')': PushWord(RPR,")",p->curx,p->cury);p->cury++;break;
+			case '+':PushWord(ADD,"+",p->curx,p->cury); p->cury++;break;
+			case ',':PushWord(COMMA,",",p->curx,p->cury);p->cury++;break;
+			case '.':PushWord(DOT,".",p->curx,p->cury);p->cury++;break;
+			case '{':PushWord(LBRC,"{",p->curx,p->cury);p->cury++;break;
+			case '}':PushWord(RBRC,"}",p->curx,p->cury);p->cury++;break;
+			case '[':PushWord(LBRK,"[",p->curx,p->cury);p->cury++;break;
+			case ']':PushWord(RBRK,"]",p->curx,p->cury);p->cury++;break;
+			case '(':PushWord(LPR,"(",p->curx,p->cury);p->cury++;break;
+			case ')':PushWord(RPR,")",p->curx,p->cury);p->cury++;break;
 			case '=':PushAnyEqual(EQ, vectorLine, len, p,VALUE);break;
 			case '>':PushAnyEqual(NLT, vectorLine , len ,p,GT);break;
 			case '<':PushAnyEqual(NGT, vectorLine,len,p,LT);break;

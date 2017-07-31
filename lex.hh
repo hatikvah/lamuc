@@ -7,7 +7,7 @@
 
 static std :: string  lcKeyWord[]={
 	/*the sequence of  newly added keywords must be consist to that of lcTypes */
-	"if" , "else" , "ret" , "mul" , "div" , "and" , "or" , "not", "global" , "true" , "false" , "null"
+	"if" , "else" , "ret" , "mul" , "div" , "and" , "or" , "not", "var" , "true" , "false" , "null"
 };
 enum lcType{
 	GT,	//>
@@ -30,6 +30,7 @@ enum lcType{
 	RPR,	//) NA
 	FUNC,		//:F
 	LOOP,		//:L
+	//TABEL,		//:T
 	ID,	//<identifier>
 	STR,	//<string>
 	INT,	//<int>
@@ -43,7 +44,7 @@ enum lcType{
 	AND,	//and
 	OR,	//or
 	NOT,	//not
-	GLOBAL,	//global
+	VAR,	//local variabal
 	T,
 	F,
 	NI
