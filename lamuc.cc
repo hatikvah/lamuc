@@ -2,6 +2,7 @@
 #include <iostream>  
 #include "load.hh"
 #include "lex.hh"
+#include "parser.hh"
 #include <vector>
 #include <string>
 
@@ -10,5 +11,8 @@ int main(){
 	loader.loadcode(); 
 	lcLex lexer(loader.CodeLine);
 	lexer.LexAnalyze();
+	lcParser parser(lexer);
+	parser.doParse();
+	//std::cout<<lexer.vectorWord[0].content;
 }
 

@@ -10,9 +10,9 @@ static std :: string  lcKeyWord[]={
 	"if" , "else" , "ret" , "mul" , "div" , "and" , "or" , "not", "var" , "true" , "false" , "null"
 };
 enum lcType{
+	VALUE,	//=
 	GT,	//>
 	LT,	//<
-	VALUE,	//=
 	NEQ,	//!=
 	EQ,	//==
 	NLT,	//>=
@@ -47,7 +47,8 @@ enum lcType{
 	VAR,	//local variabal
 	T,
 	F,
-	NI
+	NI,
+	ENDFILE
 };
 
 struct LexWord{
@@ -66,7 +67,7 @@ struct TextPos{
 
 class lcLex {
 	public:
-		std::vector <std :: string> vectorLine;  //initalized by CodeLine in Load.hh
+		std::vector <std :: string>& vectorLine;  //initalized by CodeLine in Load.hh
 		std:: vector <LexWord> vectorWord;	// target words stream
 		TextPos txtps ;
 		lcLex(std::vector<std::string>& v);

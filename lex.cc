@@ -5,8 +5,8 @@
 #include <stdlib.h>
 #include "lex.hh"
 
-lcLex :: lcLex(std::vector<std::string>& v) : vectorWord() {
-	this -> vectorLine = v;
+lcLex :: lcLex(std::vector<std::string>& v) : vectorWord() , vectorLine(v){
+	//this -> vectorLine = v;
 	/*
 	there will be two copies of v in memories , we should change a loader as a var in lexer ,therefore 
 	only one copy will remain.
@@ -102,7 +102,7 @@ void lcLex :: PushColonAny(std::vector<std::string> &v,int len, TextPos* p){
 enum lcType lcLex::isKeyword(std::string s){
 	for (int i =0;i< this->keyNumber;i++){
 		if (s==lcKeyWord[i]){
-			return lcType(MAX_OP_NUM+1+i);
+			return lcType(MAX_OP_NUM+i);
 		}
 	}
 
